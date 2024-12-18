@@ -1,6 +1,6 @@
 {Autor : Bruno Zenobio
 Version : 1.0
-Description : Practica 1, Ejercicio 2}
+Description : Practica 1, Ejercicio 1b}
 
 program Ejercicio2;
 

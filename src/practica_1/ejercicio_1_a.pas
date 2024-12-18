@@ -1,7 +1,7 @@
 {
 Autor : Bruno Zenobio
 Version : 1.0
-Description : Practica 1, Ejercicio 1}
+Description : Practica 1, Ejercicio 1a}
 
 program Ejercicio1;
 //Este programa lee dos numeros por teclados y calcula el promedio
