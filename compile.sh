@@ -3,31 +3,24 @@
 #Ete programa compila un archivo pascal y lo guarda en bin
 #
 
-ejercicio=""
-practica=""
-inciso=""
-while getopts "p:e:i:" opt; do
-        case $opt in
-                p)
-                        practica="$OPTARG"
-                        echo "Se paso como practica: $practica"
-                        ;;
-                e)
-                        ejercicio="$OPTARG"
-                        echo "Se paso como ejercicio: $ejercicio"
-                        ;;
-                i)      
-                        inciso="$OPTARG"
-                        echo "Se paso como inciso: $inciso"
-                        ;;
+read -n1 -p "Ingrese el numero de practica que quiere compilar: " npra
+echo -e "\n"
+read -p "Ingrese el nombre del archivo que desa compilar(~): " file
+echo -e "\n"
+path_folder=$(find "." -type d -name "practica_$npra")
+echo -e "Se buscara el archivo en el directorio $path_folder\n"
+path_file=$(find "$path_folder" -type f -name "$file.pas")
 
-                \?)
-                        echo "No paso argumentos como undefined se usa $1 -p 1 p 1"
-                        exit 1
-                        ;;
-        esac
-done
+if [[ -n "$path_file" ]]; then
+        fpc -o"./bin/practica_${npra}_$file" "$path_file"
+fi       
 
-if [[ -n "$ejercicio" && -n "$practica" && -n "$inciso" ]]; then
-    fpc -o"./bin/practica_${practica}ejercicio_${ejercicio}_${inciso}" "./src/practica_$practica/ejercicio_${ejercicio}_${inciso}"
-fi        
+
+read -n1 -p "Desea ejecutar el comando?[y/n]: " option
+
+if [[ $option = "y" ]]; then
+        echo -e "\n____________\nEjecutandoo comando...\n"
+        "./bin/practica_${npra}_$file"
+else
+        echo -p "Saliendo del programa"
+fi
