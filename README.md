@@ -1,5 +1,4 @@
 # 🎓 Prácticas de Programación - Ciencia de datos para organizaciones
-PRUEBA BRUNO NOTEBOOK
 ![Pascal](https://img.shields.io/badge/Pascal-Programming-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
