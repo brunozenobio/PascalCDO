@@ -1,25 +1,33 @@
 {
 Autor : Bruno Zenobio
 Version : 1.0
-Description : Practica 1, Ejercicio 1a}
+Description : Practica 1, Ejercicio 5}
 
 program Ejercicio1;
 //Este programa lee dos numeros por teclados y calcula el promedio
-function suma(a,b:double):double;
 
+procedure mayor_numero;
+var num,maximo:integer;
 begin
 
-    suma:=a+b;
+        maximo := -1;
+        while true do
+        begin
+                write('Ingrese un numero: ');
+                readln(num);
+                if num < 0 then
+                        break;
+                if ((num > maximo) and (num mod 2 = 0)) then
+                begin
+                        maximo := num;
+                end; 
+        end;
+                writeln('El mayor par ingresado fue ',maximo);
 
 end;
 
-var
-        num1,num2:double;
-begin;
-        writeln('Ingrese el numero 1: ');
-        readln(num1);
-        writeln('Ingrese el segundo numero');
-        readln(num2);
-        writeln('Suma: ',suma(num1,num2):6:1);
-
+begin
+        writeln('Ingrese numero hasta que no desee mas entonces ingrese un negativo');
+        mayor_numero;
+        
 end.
